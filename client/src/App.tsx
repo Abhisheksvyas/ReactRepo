@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 
 function App() {
-
+const name = 'Reactivities';
  const[activites, setactivites] = useState<Activity[]>([]);
  useEffect(() => {
    axios.get<Activity[]>('https://localhost:5001/api/activities')
@@ -21,7 +21,7 @@ function App() {
   return (
     
 <>
-      <Typography variant='h3'>Reactivities</Typography>
+      <Typography variant='h3'>{name}</Typography>
       <List>
         {activites.map((activity) => (
           <ListItem key={activity.id}>
